@@ -1,0 +1,46 @@
+
+
+<div class="field_wrapper">
+    <main>
+        <input type="text" name="field_name[]" value=""/>
+        <a href="javascript:void(0);" class="add_button" title="Add field">
+			<img src="https://img.pngio.com/free-png-plus-sign-transparent-plus-signpng-images-pluspng-plus-sign-transparent-background-512_512.png" width="15px" />
+		</a>
+    </main>
+
+	<!-- <main> -->
+		<!-- <input type="text" name="field_name[]" value=""/> -->
+		<!-- <a href="javascript:void(0);" class="remove_button"> -->
+			<!-- <img src="remove-icon.png" width="15px"/> -->
+		<!-- </a> -->
+	<!-- </main> -->
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var maxField = 10; //Input fields increment limitation
+		var addButton = $('.add_button'); //Add button selector
+		var wrapper = $('.field_wrapper'); //Input field wrapper
+		var fieldHTML = '<main> <label for="" class="col-md-2 control-label">খানার অন্যান্য সদস্য</label><a href="javascript:void(0);" class="form-control remove_button col-md-10" style="background:transparent;border:none; text-align: end; float: none;" title="Add field"> <img class="img-thumbnail" src="https://img.pngio.com/minus-png-minus-png-1600_1600.png" style="width:25px; padding:0px;"> </a> <label for="" class="col-md-2 control-label">রক্তের গ্রুপ</label> <div class="col-md-4"> <select class="form-control" name="oblood" value="" placeholder="blood Group"> <option value="0">রক্তের গ্রুপ</option> <option value="1"> A+</option> <option value="2"> A-</option> <option value="3"> B+</option> <option value="4"> B-</option> <option value="5"> AB+</option> <option value="6"> AB-</option> <option value="7"> O+</option> <option value="8"> O-</option> </select> </div><label for="" class="col-md-1 control-label">এন.আই.ডি</label> <div class="col-md-5"> <input type="text" class="form-control" name="onid" value="" placeholder="সদস্য National id / Birth Certificate"> </div><label for="" class="col-md-2 control-label"> নাম </label> <div class="col-md-4"> <input type="text" class="form-control" name="oname" value="" placeholder="সদস্য নাম"> </div><label for="" class="col-md-1 control-label">পেশা </label> <div class="col-md-5"> <input type="text" class="form-control" name="ooccupation" value="" placeholder="সদস্য পেশা"> </div><label for="" class="col-md-2 control-label"> শিক্ষা</label> <div class="col-md-4"> <input type="text" class="form-control" name="oeducation" value="" placeholder="সদস্য শিক্ষা"> </div><label for="" class="col-md-1 control-label"> সদস্য সম্পর্ক</label> <div class="col-md-5"> <input type="text" class="form-control" name="orelation" value="" placeholder="সম্পর্ক"> </div></main>'; //New input field html 
+		var x = 1; //Initial field counter is 1
+		
+		//Once add button is clicked
+		$(addButton).click(function(){
+			//Check maximum number of input fields
+			if(x < maxField){ 
+				x++; //Increment field counter
+				$(wrapper).append(fieldHTML); //Add field html
+			}
+		});
+		
+		//Once remove button is clicked
+		$(wrapper).on('click', '.remove_button', function(e){
+			e.preventDefault();
+			$(this).parent('main').remove(); //Remove field html
+			x--; //Decrement field counter
+		});
+	});
+</script>

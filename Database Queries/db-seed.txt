@@ -1,0 +1,11 @@
+Sometimes the code is correct but you need to run the following command in order to run the seeder command.
+
+First Run this command
+
+$- composer dumpautoload
+
+Then seed the seeder
+
+$- php artisan db:seed --class=CreateUsersTable
+
+#I hope it will work
