@@ -2,4 +2,4 @@
 
 echo "hoise";
 
-last test v1.0
+last test v2.0
