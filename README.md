@@ -1,1 +1,1 @@
-# smartsoftltd
+# smart-software-limited
