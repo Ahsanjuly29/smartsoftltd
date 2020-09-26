@@ -4,6 +4,11 @@ php artisan make:migration create_users_table --create=users
 //Adding new attribute on existing table using migration command: //
 php artisan make:migration add_votes_to_users_table --table=users
 
+//To chage a limit from previous attribute with data
+//first addd new migration then add there:
+
+$table->string('title', 191)->change();
+
 
 
 
